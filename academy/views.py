@@ -5,7 +5,7 @@ from academy.models import Enrollment, Student, Subject
 from academy.serializers import AddSubjectSerializer, EnrollmentSerializer, StudentSerializer, SubjectSerializer, UpdateSubjectSerializer
 
 class SubjectViewSet(ModelViewSet):
-    http_method_names = ['get', 'post', 'patch']
+    http_method_names = ['get', 'post', 'patch', 'delete']
     queryset = Subject.objects.select_related('academy').all()
     
     def get_serializer_class(self):
