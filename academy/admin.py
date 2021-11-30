@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from academy.models import Academy, Subject
+from academy.models import Academy, Student, Subject
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
@@ -13,3 +13,12 @@ class SubjectAdmin(admin.ModelAdmin):
 class AcademyAdmin(admin.ModelAdmin):
     list_display = ['name', 'created_at']
     search_fields = ['name']
+
+@admin.register(Student)
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ['full_name', 'email', 'phone']
+    search_fields = ['first_name', 'last_name']
+    
+    @admin.display(ordering='first_name')
+    def full_name(self, student: Student):
+        return student.first_name + ' ' + student.last_name
