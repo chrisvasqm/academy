@@ -23,6 +23,13 @@ class AddSubjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Subject
         fields = ['id', 'name', 'credits', 'price_per_credit', 'academy_id']
+        
+class UpdateSubjectSerializer(serializers.ModelSerializer):
+    academy_id = serializers.IntegerField()
+    
+    class Meta:
+        model = Subject
+        fields = ['name', 'credits', 'price_per_credit', 'academy_id']
     
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
