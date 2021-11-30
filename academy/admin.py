@@ -4,7 +4,7 @@ from academy.models import Subject
 
 @admin.register(Subject)
 class SubjectAdmin(admin.ModelAdmin):
-    list_display = ['name', 'credits', 'price_per_credit']
-    list_editable = ['credits', 'price_per_credit']
+    list_display = ['name', 'credits', 'price_per_credit', 'academy']
+    list_editable = ['credits', 'price_per_credit', 'academy']
     list_per_page = 10
     search_fields = ['name']
