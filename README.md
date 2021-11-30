@@ -2,6 +2,15 @@
 
 This a pet project to try out a few things taking the example of a imginary Academy where Students can sign up for the Subjects they want to study.
 
+## Administration Site
+
+Admin and Staff members will be able to manage the following modules:
+
+1. Academies
+2. Students
+3. Subjects
+4. Groups
+
 ## Supported Endpoints
 
 ### Subjects
