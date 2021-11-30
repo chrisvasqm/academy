@@ -18,6 +18,7 @@ class AcademyAdmin(admin.ModelAdmin):
 class StudentAdmin(admin.ModelAdmin):
     list_display = ['full_name', 'email', 'phone']
     search_fields = ['first_name', 'last_name']
+    list_per_page = 10
     
     @admin.display(ordering='first_name')
     def full_name(self, student: Student):
