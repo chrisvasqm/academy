@@ -1,7 +1,8 @@
+from django.db.models.query import QuerySet
 from rest_framework.viewsets import ModelViewSet
 
-from academy.models import Student, Subject
-from academy.serializers import StudentSerializer, SubjectSerializer
+from academy.models import Enrollment, Student, Subject
+from academy.serializers import EnrollmentSerializer, StudentSerializer, SubjectSerializer
 
 class SubjectViewSet(ModelViewSet):
     queryset = Subject.objects.select_related('academy').all()
@@ -10,3 +11,7 @@ class SubjectViewSet(ModelViewSet):
 class StudentViewSet(ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
+    
+class EnrollmentViewSet(ModelViewSet):
+    queryset = Enrollment.objects.all()
+    serializer_class = EnrollmentSerializer
