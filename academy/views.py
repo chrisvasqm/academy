@@ -13,5 +13,5 @@ class StudentViewSet(ModelViewSet):
     serializer_class = StudentSerializer
     
 class EnrollmentViewSet(ModelViewSet):
-    queryset = Enrollment.objects.all()
+    queryset = Enrollment.objects.select_related('student').select_related('subject').all()
     serializer_class = EnrollmentSerializer
