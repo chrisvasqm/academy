@@ -27,5 +27,5 @@ class Student(models.Model):
         return self.first_name + ' ' + self.last_name
     
 class Enrollment(models.Model):
-    subject = models.ForeignKey(Subject, on_delete=PROTECT, related_name='subjects')
-    student = models.ForeignKey(Student, on_delete=PROTECT, related_name='students')
+    subject = models.ForeignKey(Subject, on_delete=CASCADE, related_name='subjects')
+    student = models.ForeignKey(Student, on_delete=CASCADE, related_name='students')
