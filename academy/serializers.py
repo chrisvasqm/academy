@@ -12,7 +12,7 @@ class SubjectSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = Subject
-        fields = ['id', 'credits', 'price_per_credit', 'academy', 'total_price']
+        fields = ['id', 'name', 'credits', 'price_per_credit', 'academy', 'total_price']
         
     def get_total_price(self, subject: Subject):
         return subject.credits * subject.price_per_credit
