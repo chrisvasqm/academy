@@ -1,10 +1,15 @@
 from re import sub
 from rest_framework import serializers
+from .models import Academy, Subject
 
-from .models import Subject
+class AcademySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Academy
+        fields = ['id', 'name', 'created_at']
 
 class SubjectSerializer(serializers.ModelSerializer):
     total_price = serializers.SerializerMethodField(method_name='get_total_price')
+    academy = AcademySerializer(read_only=True)
     
     class Meta:
         model = Subject
