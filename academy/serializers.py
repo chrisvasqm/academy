@@ -17,6 +17,13 @@ class SubjectSerializer(serializers.ModelSerializer):
     def get_total_price(self, subject: Subject):
         return subject.credits * subject.price_per_credit
     
+class AddSubjectSerializer(serializers.ModelSerializer):
+    academy_id = serializers.IntegerField()
+    
+    class Meta:
+        model = Subject
+        fields = ['id', 'name', 'credits', 'price_per_credit', 'academy_id']
+    
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
