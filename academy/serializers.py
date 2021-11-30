@@ -1,4 +1,3 @@
-from re import sub
 from rest_framework import serializers
 from .models import Academy, Subject
 
