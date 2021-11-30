@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Academy, Subject
+from .models import Academy, Student, Subject
 
 class AcademySerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,3 +16,8 @@ class SubjectSerializer(serializers.ModelSerializer):
         
     def get_total_price(self, subject: Subject):
         return subject.credits * subject.price_per_credit
+    
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = ['id', 'first_name', 'last_name', 'email', 'phone']
