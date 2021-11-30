@@ -4,6 +4,9 @@ from django.db.models.deletion import CASCADE, PROTECT
 class Academy(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateField()
+    
+    def __str__(self) -> str:
+        return self.name
 
 class Subject(models.Model):
     name = models.CharField(max_length=255)
