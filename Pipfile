@@ -10,6 +10,7 @@ configparser = "*"
 django-debug-toolbar = "*"
 djangorestframework = "*"
 django-filter = "*"
+djoser = "*"
 
 [dev-packages]
 
